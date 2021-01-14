@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-toolbar {
+    background: #ededed;
+    color: rgba(0, 0, 0, 0.87);
+}
+button:focus {outline:0;}
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #07bc4c;
+}
+.mat-drawer-backdrop.mat-drawer-shown {
+    display:none;
+}

@@ -1,0 +1,25 @@
+<mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmxhoI6gUWeT8JlWBwFT1t6DMpEFFnIC-szw&usqp=CAU" class="avatar" alt="Avatar" style="width:40px;height: 40px;">
+    </button>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <svg id="ee51d023-7db6-4950-baf7-c34874b80976" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 20.664a9.163 9.163 0 0 1-6.521-2.702.977.977 0 0 1 1.381-1.381 7.269 7.269 0 0 0 10.024.244.977.977 0 0 1 1.313 1.445A9.192 9.192 0 0 1 12 20.664zm7.965-6.112a.977.977 0 0 1-.944-1.229 7.26 7.26 0 0 0-4.8-8.804.977.977 0 0 1 .594-1.86 9.212 9.212 0 0 1 6.092 11.169.976.976 0 0 1-.942.724zm-16.025-.39a.977.977 0 0 1-.953-.769 9.21 9.21 0 0 1 6.626-10.86.975.975 0 1 1 .52 1.882l-.015.004a7.259 7.259 0 0 0-5.223 8.558.978.978 0 0 1-.955 1.185z"></path></svg>
+    </button>
+    <button (click)="openContacts()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>chat</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu" aria-label="Example icon-button with share icon">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-menu  #menu="matMenu">
+    <button mat-menu-item>New group</button>
+    <button mat-menu-item>Create a room</button>
+    <button mat-menu-item>Profile</button>
+    <button mat-menu-item>Archived</button>
+    <button mat-menu-item>Starred</button>
+    <button mat-menu-item>Settings</button>
+    <button mat-menu-item>Log out</button>
+</mat-menu>
