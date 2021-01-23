@@ -22,11 +22,11 @@ export class TopRightToolbarComponent implements OnInit {
   {
     console.log("called");
     
-    this.sideNavService.toggle(data,"side","false","end");
+    this.sideNavService.toggleRight(data,"side","false","end");
   }
   
   search(data){
-    this.sideNavService.toggle(data,"side","false","end");
+    this.sideNavService.toggleRight(data,"side","false","end");
   }
 
   openDialog(){

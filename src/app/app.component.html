@@ -1,7 +1,7 @@
-<mat-drawer-container class="example-container" [hasBackdrop]="sideBarBackdrop | async" autosize>
-    <mat-drawer #drawer class="example-sidenav" [mode]="sideBarMode | async" [position]="sideBarPosition | async">
+<mat-drawer-container class="example-container" [hasBackdrop]="'false'" [autosize]="true">
+    <mat-drawer #drawer class="example-sidenav" [mode]="'side'" [position]="'end'">
         <mat-toolbar>
-            <button (click)="closeSideNav()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <button (click)="closeRightSideNav()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
               <mat-icon>close</mat-icon>
             </button>
             <span>{{sideBarTitle | async}}</span>
@@ -22,5 +22,30 @@
         </ng-container>
      
     </mat-drawer>
+
+    <mat-drawer #drawerLeft class="example-sidenav" [mode]="'over'" [position]="'start'">
+        <mat-toolbar>
+            <button (click)="closeLeftSideNav()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+              <mat-icon>close</mat-icon>
+            </button>
+            <span>{{sideBarTitleLeft | async}}</span>
+        </mat-toolbar>
+        <ng-container *ngIf="(sideBarTitle | async) === 'Contact Info'">
+            <div class="mt-4" style="display: flex;justify-content: center;">
+                <span>Contact info will be displayed here</span>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="(sideBarTitle | async) === 'Search'">
+            <div [style.background]="divColor" style="padding: 10px;" >
+                <app-search [placeholder]="'Search...'" (listenClick)="changeDivBg($event)"></app-search>
+            </div>
+            <div class="mt-4" style="display: flex;justify-content: center;">
+                <span>You can search here</span>
+            </div>
+            
+        </ng-container>
+     
+    </mat-drawer>
+
     <app-home></app-home>    
 </mat-drawer-container>

@@ -14,7 +14,7 @@ export class TopLeftToolbarComponent implements OnInit {
   }
 
   openContacts(){
-    this.sideNavService.toggle('Contacts','over',false,'start');
+    this.sideNavService.toggleLeft('New Chat','',false,'');
   }
 
 }

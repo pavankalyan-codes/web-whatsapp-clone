@@ -19,16 +19,27 @@ export class SideNavService {
   sideBarPosition: BehaviorSubject<string>=new BehaviorSubject<string>('');
   sideBarPosition$=this.sideBarPosition.asObservable();
 
+  sideBarTitleLeft: BehaviorSubject<string>=new BehaviorSubject<string>('');
+  sideBarTitleLeft$=this.sideBarTitleLeft.asObservable();
+
   constructor() { }
 
-  private matDrawer: MatDrawer;
+  private matDrawerRight: MatDrawer;
+  private matDrawerLeft: MatDrawer;
 
-  setDrawer(drawer: MatDrawer) {
-      this.matDrawer = drawer;
+
+  setRightDrawer(drawer: MatDrawer)
+  {
+    this.matDrawerRight=drawer;
   }
 
-  toggle(title,mode,backdrop,pos) {
-      this.matDrawer.toggle();
+  setLeftDrawer(drawer: MatDrawer)
+  {
+    this.matDrawerLeft=drawer;
+  }
+
+  toggleRight(title,mode,backdrop,pos) {
+      this.matDrawerRight.toggle();
       if(title)
       {
         this.sideBarTitle.next(title);
@@ -38,5 +49,17 @@ export class SideNavService {
       }
       
       
+  }
+
+
+  toggleLeft(title,mode,backdrop,pos){
+    this.matDrawerLeft.toggle();
+    if(title)
+      {
+        this.sideBarTitleLeft.next(title);
+        this.sideBarMode.next(mode);
+        this.sideBarBackdrop.next(backdrop);
+        this.sideBarPosition.next(pos);
+      }
   }
 }

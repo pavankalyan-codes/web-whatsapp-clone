@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   numbers=[];
   showFiller = false;
   constructor() { 
-    this.numbers = Array(100).fill(4); // [4,4,4,4,4]
+    this.numbers = Array(6).fill(4); // [4,4,4,4,4]
   }
 
   ngOnInit(): void {

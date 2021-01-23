@@ -5,7 +5,7 @@
         <div [style.background]="divColor" style="padding: 10px;" >
             <app-search [placeholder]="'Search or start new chat'" (listenClick)="changeDivBg($event)"></app-search>
         </div>
-        <div style="overflow: hidden;max-height: 81%;cursor: pointer;">
+        <div style="overflow: auto;overflow-x: hidden;max-height: 81%;cursor: pointer;">
             <ng-container *ngFor="let number of numbers">
                 <app-chat></app-chat>
             </ng-container>

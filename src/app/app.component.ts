@@ -15,11 +15,13 @@ export class AppComponent {
   a=10;
   faCoffee = faCoffee;
   showFiller = false;
+  sideBarTitleLeft: Observable<string>;
   sideBarTitle: Observable<string>;
   sideBarMode: Observable<string>;
   sideBarBackdrop: Observable<boolean>;
   sideBarPosition: Observable<string>;
-  @ViewChild(MatDrawer) matDrawer: MatDrawer;
+  @ViewChild('drawer') matDrawerRight: MatDrawer;
+  @ViewChild('drawerLeft') matDrawerLeft: MatDrawer;
   divColor="#f6f6f6";
   hasBackdrop='side';
 
@@ -30,11 +32,13 @@ export class AppComponent {
     this.sideBarMode=this.sidenavService.sideBarMode$;
     this.sideBarBackdrop=this.sidenavService.sideBarBackdrop$;
     this.sideBarPosition=this.sidenavService.sideBarPosition$;
+    this.sideBarTitleLeft=this.sidenavService.sideBarTitleLeft$
     
   }
 
   ngAfterViewInit(): void {
-    this.sidenavService.setDrawer(this.matDrawer);
+    this.sidenavService.setRightDrawer(this.matDrawerRight);
+    this.sidenavService.setLeftDrawer(this.matDrawerLeft)
   }
 
   get(){
@@ -48,7 +52,11 @@ export class AppComponent {
     this.divColor=this.divColor==="#ffff"?"#f6f6f6":"#ffff"
   }
 
-  closeSideNav(){
-    this.sidenavService.toggle('','',false,'');
+  closeLeftSideNav(){
+    this.sidenavService.toggleLeft('','',false,'');
+  }
+
+  closeRightSideNav(){
+    this.sidenavService.toggleRight('','',false,'');
   }
 }
