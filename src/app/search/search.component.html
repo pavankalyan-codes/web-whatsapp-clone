@@ -1,3 +1,9 @@
-<div style="display: flex;">
-    <input type="text" (focusout)="clicked()" (click)="clicked()" class="form-control form-rounded input-with-icon-inside" [placeholder]="placeholder">
+<div style="display: flex">
+  <input
+    type="text"
+    (focusout)="clicked()"
+    (focusin)="clicked()"
+    class="form-control form-rounded input-with-icon-inside"
+    [placeholder]="placeholder"
+  />
 </div>

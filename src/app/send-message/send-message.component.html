@@ -1,0 +1,33 @@
+<div
+  class="justify-self-end align-items-center flex-row d-flex"
+  style="background-color: #f0f0f0"
+>
+  <mat-icon
+    aria-hidden="false"
+    style="cursor: pointer"
+    class="ml-4"
+    aria-label="Example home icon"
+    >insert_emoticon</mat-icon
+  >
+  <mat-icon
+    aria-hidden="false"
+    class="ml-3"
+    style="cursor: pointer"
+    aria-label="Example home icon"
+    >attach_file</mat-icon
+  >
+  <input
+    type="text"
+    #msg
+    (keyup.enter)="sendMessage($event)"
+    class="form-control form-rounded input-with-icon-inside flex-grow-1 border-0 px-3 py-2 my-2 mx-3 mr-3 shadow-sm"
+    [placeholder]="'Type a message'"
+  />
+  <mat-icon
+    class="mr-3"
+    aria-hidden="false"
+    style="cursor: pointer"
+    aria-label="Example home icon"
+    >keyboard_voice</mat-icon
+  >
+</div>

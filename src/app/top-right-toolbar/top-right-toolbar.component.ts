@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MydialogComponent } from '../mydialog/mydialog.component';
 import { OpenModalService } from '../open-modal.service';
@@ -10,6 +10,10 @@ import { SideNavService } from '../side-nav.service';
   styleUrls: ['./top-right-toolbar.component.scss']
 })
 export class TopRightToolbarComponent implements OnInit {
+
+  @Input() name;
+  @Input() status;
+  @Input() profilepic;
 
   constructor(private sideNavService:SideNavService,
               private openModalService:OpenModalService,

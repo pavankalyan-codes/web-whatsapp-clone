@@ -1,41 +1,65 @@
-<div style="display: flex;justify-content: flex-start;">
-    
-    <div style="display: flex;padding: 20px;">
-        <div style="">
-            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmxhoI6gUWeT8JlWBwFT1t6DMpEFFnIC-szw&usqp=CAU" class="avatar" alt="Avatar" style="width:50px;height: 50px;">
-            </button>
-        </div>
-        <div style="display: flex;flex-direction: column;margin-left: 20px;margin-top: 10px;">
-            <div class="data-prop" style="height: 14px;">
-                <span style="font-size: 16px;">
-                    Pakalu Papito
-                </span>
-            </div>
-            <div class="data-prop" style="margin-top: 5px;">
-                <span style="font-size: 13px;font-weight: 300;">
-                    Online
-                </span>
-            </div>
-        </div>
-        
+<div
+  class="contact"
+  [ngClass]="contactIndex === index ? 'active' : ''"
+  (click)="contactClicked()"
+  style="display: flex; justify-content: flex-start"
+>
+  <div style="display: flex; padding: 20px">
+    <div style="">
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+      >
+        <img
+          [src]="contact.profilepic"
+          class="avatar"
+          alt="Avatar"
+          style="width: 50px; height: 50px"
+        />
+      </button>
     </div>
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        margin-top: 10px;
+      "
+    >
+      <div class="data-prop" style="height: 14px">
+        <span style="font-size: 16px">
+          {{ contact.name }}
+        </span>
+      </div>
+      <div class="data-prop" style="margin-top: 5px">
+        <span style="font-size: 13px; font-weight: 300">
+          {{ contact.status }}
+        </span>
+      </div>
+    </div>
+  </div>
 
-    <span class="example-spacer"></span>
-    <div>
-        <div style="display: flex;flex-direction: column;padding: 20px;margin-top: 10px;">
-            <div class="data-prop" style="height: 14px;">
-                <span style="font-size: 12px;">
-                    12:08 PM
-                </span>
-            </div>
-            <div class="data-prop" style="margin-top: 5px;">
-                <span style="font-size: 10px;font-weight: 300;text-align: right;">
-                    Yesterday
-                </span>
-            </div>
-        </div>
+  <span class="example-spacer"></span>
+  <div>
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        margin-top: 10px;
+      "
+    >
+      <div class="data-prop" style="height: 14px">
+        <span style="font-size: 12px">
+          {{ contact.lastseen | date: "hh:mm a" }}
+        </span>
+      </div>
+      <div class="data-prop" style="margin-top: 5px">
+        <span style="font-size: 10px; font-weight: 300; text-align: right">
+          Yesterday
+        </span>
+      </div>
     </div>
-    
-    
+  </div>
 </div>

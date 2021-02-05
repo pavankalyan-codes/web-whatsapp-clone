@@ -1,34 +1,54 @@
 <mat-toolbar>
-    <button (click)="openSideNav('Contact Info')" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmxhoI6gUWeT8JlWBwFT1t6DMpEFFnIC-szw&usqp=CAU" class="avatar" alt="Avatar" style="width:40px;height: 40px;">
-    </button>
-    <div style="display: flex;flex-direction: column;padding: 10px;">
-        <div style="height: 14px;">
-            <span style="font-size: 16px;">
-                Pakalu Papito
-            </span>
-        </div>
-        <div style="margin-top: 5px;">
-            <span style="font-size: 13px;font-weight: 300;">
-                Online
-            </span>
-        </div>
+  <button
+    (click)="openSideNav('Contact Info')"
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <img
+      [src]="profilepic"
+      class="avatar"
+      alt="Avatar"
+      style="width: 40px; height: 40px"
+    />
+  </button>
+  <div style="display: flex; flex-direction: column; padding: 10px">
+    <div style="height: 14px">
+      <span style="font-size: 16px">
+        {{ name }}
+      </span>
     </div>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" (click)="search('Search')" aria-label="Example icon-button with heart icon">
-      <mat-icon>search</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu" aria-label="Example icon-button with share icon">
-      <mat-icon>more_vert</mat-icon>
-    </button>
-  </mat-toolbar>
+    <div style="margin-top: 5px">
+      <span style="font-size: 13px; font-weight: 300">
+        {{ status }}
+      </span>
+    </div>
+  </div>
+  <span class="example-spacer"></span>
+  <button
+    mat-icon-button
+    class="example-icon favorite-icon"
+    (click)="search('Search')"
+    aria-label="Example icon-button with heart icon"
+  >
+    <mat-icon>search</mat-icon>
+  </button>
+  <button
+    mat-icon-button
+    class="example-icon"
+    [matMenuTriggerFor]="menu"
+    aria-label="Example icon-button with share icon"
+  >
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</mat-toolbar>
 
 <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="openSideNav('Contact Info')">Contact Info</button>
-    <button mat-menu-item (click)="openDialog()">Select Messages</button>
-    <button mat-menu-item (click)="openDialog()">Mute Notifications</button>
-    <button mat-menu-item (click)="openDialog()">Clear Messages</button>
-    <button mat-menu-item (click)="openDialog()">Delete Chat</button>
+  <button mat-menu-item (click)="openSideNav('Contact Info')">
+    Contact Info
+  </button>
+  <button mat-menu-item (click)="openDialog()">Select Messages</button>
+  <button mat-menu-item (click)="openDialog()">Mute Notifications</button>
+  <button mat-menu-item (click)="openDialog()">Clear Messages</button>
+  <button mat-menu-item (click)="openDialog()">Delete Chat</button>
 </mat-menu>
-
- 

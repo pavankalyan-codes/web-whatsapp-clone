@@ -1,10 +1,16 @@
-.avatar{
-    border-radius: 50%;
-  }
-  .example-spacer {
-    flex: 1 1 auto;
-  }
-  .data-prop{
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
+.avatar {
+  border-radius: 50%;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.data-prop {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.contact:hover {
+  background-color: rgba(215, 228, 228, 0.507);
+}
+.active {
+  background-color: rgba(215, 228, 228, 0.507);
+}

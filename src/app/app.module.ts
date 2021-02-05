@@ -24,6 +24,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { OpenModalService } from './open-modal.service';
 import {MatCardModule} from '@angular/material/card'
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MessagesComponent } from './messages/messages.component';
+import { SendMessageComponent } from './send-message/send-message.component';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     TopRightToolbarComponent,
     SearchComponent,
     ChatComponent,
-    MydialogComponent
+    MydialogComponent,
+    MessagesComponent,
+    SendMessageComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
