@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { ContactsService } from '../contacts.service';
 import { MessageService } from '../message.service';
 import { Contact } from '../models/Contact.model';
+import { MatFabMenu } from '@angular-material-extensions/fab-menu';
 
 @Component({
   selector: 'app-home',
@@ -27,6 +28,8 @@ export class HomeComponent implements OnInit {
   profilepic: string;
 
   showDummy: boolean = true;
+
+  showFabMenu: boolean = false;
   constructor(
     private messsagesService: MessageService,
     private contactService: ContactsService
@@ -64,6 +67,10 @@ export class HomeComponent implements OnInit {
     try {
       this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
     } catch (err) {}
+  }
+
+  attach() {
+    this.showFabMenu = !this.showFabMenu;
   }
 
   private getContactChat(index) {

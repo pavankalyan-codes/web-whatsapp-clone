@@ -1,0 +1,78 @@
+<div
+  style="
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  <div
+    style="
+      display: flex;
+      justify-content: center;
+      background-color: #ededed;
+      width: 100%;
+      padding: 40px;
+    "
+  >
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmxhoI6gUWeT8JlWBwFT1t6DMpEFFnIC-szw&usqp=CAU"
+      class="avatar"
+      alt="Avatar"
+      style="width: 200px; height: 200px"
+    />
+  </div>
+
+  <div
+    class="ml-3 mr-3"
+    style="width: 100%; background-color: white; padding: 20px"
+  >
+    <span style="color: #65c0a5; font-size: 16px">Your Name</span>
+    <mat-form-field class="example-form-field" style="width: 100%">
+      <input matInput type="text" [(ngModel)]="profileName" />
+      <button
+        mat-button
+        *ngIf="profileName"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="changeIcon()"
+      >
+        <mat-icon>{{ iconInInput }}</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+  <div
+    class="ml-3 mr-3"
+    style="
+      width: 100%;
+      background-color: #ededed;
+      color: rgba(0, 0, 0, 0.45);
+      padding: 20px;
+    "
+  >
+    This is not your username or pin. This name will be visible to your WhatsApp
+    contacts.
+  </div>
+
+  <div
+    class="ml-3 mr-3"
+    style="width: 100%; background-color: white; padding: 20px"
+  >
+    <span style="color: #65c0a5; font-size: 16px">About</span>
+    <mat-form-field class="example-form-field" style="width: 100%">
+      <input matInput type="text" [(ngModel)]="profileName" />
+      <button
+        mat-button
+        *ngIf="profileName"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="changeIconAbout()"
+      >
+        <mat-icon>{{ iconInInput1 }}</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+</div>

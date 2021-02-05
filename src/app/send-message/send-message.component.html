@@ -2,20 +2,27 @@
   class="justify-self-end align-items-center flex-row d-flex"
   style="background-color: #f0f0f0"
 >
-  <mat-icon
-    aria-hidden="false"
-    style="cursor: pointer"
-    class="ml-4"
-    aria-label="Example home icon"
-    >insert_emoticon</mat-icon
-  >
-  <mat-icon
-    aria-hidden="false"
+  <button
     class="ml-3"
-    style="cursor: pointer"
-    aria-label="Example home icon"
-    >attach_file</mat-icon
+    mat-icon-button
+    aria-label="Example icon-button with share icon"
   >
+    <mat-icon
+      aria-hidden="false"
+      style="cursor: pointer"
+      aria-label="Example home icon"
+      >insert_emoticon</mat-icon
+    >
+  </button>
+  <button
+    class="ml-3"
+    mat-icon-button
+    aria-label="Example icon-button with share icon"
+  >
+    <mat-icon (click)="attach.emit('attach')" aria-label="Example home icon"
+      >attach_file</mat-icon
+    >
+  </button>
   <input
     type="text"
     #msg
@@ -23,11 +30,13 @@
     class="form-control form-rounded input-with-icon-inside flex-grow-1 border-0 px-3 py-2 my-2 mx-3 mr-3 shadow-sm"
     [placeholder]="'Type a message'"
   />
-  <mat-icon
+  <button
     class="mr-3"
-    aria-hidden="false"
-    style="cursor: pointer"
-    aria-label="Example home icon"
-    >keyboard_voice</mat-icon
+    mat-icon-button
+    aria-label="Example icon-button with share icon"
   >
+    <mat-icon style="cursor: pointer" aria-label="Example home icon"
+      >keyboard_voice</mat-icon
+    >
+  </button>
 </div>

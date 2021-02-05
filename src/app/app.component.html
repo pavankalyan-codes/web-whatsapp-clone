@@ -44,26 +44,27 @@
     [mode]="'over'"
     [position]="'start'"
   >
-    <mat-toolbar>
-      <button (click)="closeLeftSideNav()" mat-icon-button class="example-icon">
-        <mat-icon>close</mat-icon>
+    <mat-toolbar style="height: 20%; background-color: #65c0a5">
+      <button
+        (click)="closeLeftSideNav()"
+        style="margin-top: 15%"
+        mat-icon-button
+        class="example-icon"
+      >
+        <mat-icon style="color: white">keyboard_backspace</mat-icon>
       </button>
-      <span>{{ sideBarTitleLeft | async }}</span>
+      <span class="ml-3" style="color: white; margin-top: 15%">{{
+        sideBarTitleLeft | async
+      }}</span>
     </mat-toolbar>
-    <ng-container *ngIf="(sideBarTitle | async) === 'Contact Info'">
-      <div class="mt-4" style="display: flex; justify-content: center">
-        <span>Contact info will be displayed here</span>
+    <ng-container *ngIf="(sideBarTitleLeft | async) === 'Profile'">
+      <div style="display: flex; justify-content: center">
+        <app-edit-profile style="width: 100%"></app-edit-profile>
       </div>
     </ng-container>
-    <ng-container *ngIf="(sideBarTitle | async) === 'Search'">
-      <div [style.background]="divColor" style="padding: 10px">
-        <app-search
-          [placeholder]="'Search...'"
-          (listenClick)="changeDivBg($event)"
-        ></app-search>
-      </div>
+    <ng-container *ngIf="(sideBarTitleLeft | async) === 'New Chat'">
       <div class="mt-4" style="display: flex; justify-content: center">
-        <span>You can search here</span>
+        <span>New group chat</span>
       </div>
     </ng-container>
   </mat-drawer>

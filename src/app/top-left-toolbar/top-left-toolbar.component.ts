@@ -4,17 +4,18 @@ import { SideNavService } from '../side-nav.service';
 @Component({
   selector: 'app-top-left-toolbar',
   templateUrl: './top-left-toolbar.component.html',
-  styleUrls: ['./top-left-toolbar.component.scss']
+  styleUrls: ['./top-left-toolbar.component.scss'],
 })
 export class TopLeftToolbarComponent implements OnInit {
+  constructor(private sideNavService: SideNavService) {}
 
-  constructor(private sideNavService:SideNavService) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  openProfile() {
+    this.sideNavService.toggleLeft('Profile', '', false, '');
   }
 
-  openContacts(){
-    this.sideNavService.toggleLeft('New Chat','',false,'');
+  openContacts() {
+    this.sideNavService.toggleLeft('New Chat', '', false, '');
   }
-
 }

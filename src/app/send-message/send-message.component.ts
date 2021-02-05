@@ -12,6 +12,8 @@ export class SendMessageComponent implements OnInit {
   @Output()
   sendMsg = new EventEmitter<string>();
 
+  @Output() attach = new EventEmitter<string>();
+
   constructor() {
     this.msg = 'dfdf';
   }
