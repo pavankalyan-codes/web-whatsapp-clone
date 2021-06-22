@@ -130,7 +130,7 @@ export class ContactsService {
       status: 'Online',
       lastseen: '1612455560279',
       profilepic:
-        'https://static.wikia.nocookie.net/breakingbad/images/4/40/Season_2_-_Skyler.jpg/revision/latest?cb=20090617160516',
+        'https://media1.popsugar-assets.com/files/thumbor/aPVck-LrapTPZmBi0gMR-7WRhDg/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2018/01/12/910/n/1922283/5fd095dfb8ed5e51_TCDBRBA_EC010/i/Anna-Gunn-Skyler-White.jpg',
       messages: [
         {
           message: 'hello hi. how are you',
